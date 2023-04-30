@@ -1,0 +1,16 @@
+header {
+	display: grid;
+	grid-template-columns: 8fr 1fr;
+	grid-gap: 5px;
+}
+
+header input, header button {
+	width: 100%;
+	padding: 10px;
+	background-color: var(--c2);
+	outline: none;
+	border: 2px solid var(--c3);
+	border-radius: 10px;
+	margin-bottom: 10px;
+	color: white;
+}

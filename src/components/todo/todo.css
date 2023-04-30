@@ -1,0 +1,43 @@
+.todo{
+	background-color: rgba(255, 255, 255, .1);
+	position: relative;
+	margin-bottom: 2px;
+	border-radius: 8px;
+	display: grid;
+	border: 2px solid var(--c2);
+}
+.todo__text{
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	text-align: left;
+}
+.todo__text.done{
+	color: rgba(255, 255, 255, .5);
+}
+.todo__text.done span{
+	text-decoration: line-through;
+}
+.todo__checkbox{
+	font-size: 20px;
+	margin-right: 5px;
+}
+.todo__buttons{
+	padding: 0px 3px 3px;
+}
+.todo__buttons > button {
+	padding: 5px 10px;
+	margin-left: 1px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: gray;
+	color: whitesmoke;
+	font-weight: bold;
+}
+.todo__buttons .todo__toggle-btn{
+	background-color: var(--c1);
+}
+.todo__buttons .todo__delete-btn{
+	background-color: var(--c3);
+}

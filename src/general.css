@@ -1,0 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	--c1: #3C424A;
+	--c2: #343A40;
+	--c3: #2F343A;
+	--c4: #EF6191;
+}
+body{
+	color: white;
+	min-height: 100dvh;
+	background-color: var(--c1);
+	padding: 10px;
+}
+.container {
+	max-width: 700px;
+	margin: auto;
+}
+.App__container__special-box{
+	min-height: 85dvh;
+}
+hr{
+	border: 0;
+	outline: 0;
+	height: 4px;
+	border-radius: 10px;
+	background-color: var(--c2);
+	margin: 10px;
+}
+.noTodo{
+	text-align: center;
+	color: #9a9fa7;
+	font-weight: bolder;
+}
