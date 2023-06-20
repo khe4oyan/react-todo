@@ -1,24 +1,35 @@
+import { useEffect, useState } from 'react';
 import './general.css'
 import Header from './components/header/Header'
 import TodoList from './components/todoList/TodoLIst'
-import Footer from './components/footer/Footer';
-import { useState } from 'react';
-
-const backEnd_todo = [
-  'Create first react app',
-  'Upload in github',
-  'Create public page',
-  'Make video',
-];
-
-const backEnd_done = [
-  'Download Todo Sample',
-  'Drink'
-];
+import NoTodo from './components/noTodo/NoTodo';
 
 export default function App() {
-  const [todo, setTodo] = useState(backEnd_todo ?? []);
-  const [done, setDone] = useState(backEnd_done ?? []);
+  const [todo, setTodo] = useState(() => {
+    let todoList = JSON.parse(localStorage.getItem('todo'));
+    if (!todoList) {
+      localStorage.setItem('todo', '[]');
+      todoList = [];
+    } 
+    return todoList;
+  });
+
+  const [done, setDone] = useState(() => {
+    let done = JSON.parse(localStorage.getItem('done'));
+    if (!done) {
+      localStorage.setItem('done', '[]');
+      done = [];
+    } 
+    return done;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todo));
+  }, [todo])
+  
+  useEffect(() => {
+    localStorage.setItem('done', JSON.stringify(done));
+  }, [done])
 
   return (
     <div className="App">
@@ -28,7 +39,7 @@ export default function App() {
           {
             todo.length > 0 ?
             <TodoList setDone={setDone} setTodo={setTodo} isDoneList={false} list={todo}/> :
-            <NoTodo message={'create your firts todo task!'}/>
+            <NoTodo message={'create your first todo task!'}/>
           }
           <hr />
           {
@@ -37,16 +48,8 @@ export default function App() {
             <NoTodo message={'no have done todo'}/>
           }
         </div>
-        <Footer />
       </div>
     </div>
   );
 }
 
-function NoTodo({message}) {
-  return (
-    <p className='noTodo'>
-      ({message})
-    </p>
-  );
-}
