@@ -1,4 +1,12 @@
+
 header {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 10px;
+}
+.header__box {
 	display: grid;
 	grid-template-columns: 8fr 1fr;
 	grid-gap: 5px;
@@ -11,6 +19,5 @@ header input, header button {
 	outline: none;
 	border: 2px solid var(--c3);
 	border-radius: 10px;
-	margin-bottom: 10px;
 	color: white;
 }
